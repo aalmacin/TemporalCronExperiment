@@ -25,3 +25,13 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task sayHello(type: JavaExec) {
+    main = 'helloworldapp.InitiateHelloWorld'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task startWorker(type: JavaExec) {
+    main = 'helloworldapp.HelloWorldWorker'
+    classpath = sourceSets.main.runtimeClasspath
+}
