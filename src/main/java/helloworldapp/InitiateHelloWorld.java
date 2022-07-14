@@ -10,6 +10,7 @@ public class InitiateHelloWorld {
         WorkflowClient client = WorkflowClient.newInstance(service);
         WorkflowOptions options = WorkflowOptions.newBuilder()
                 .setTaskQueue(Shared.HELLO_WORLD_TASK_QUEUE)
+                .setCronSchedule("* * * * *")
                 .build();
         HelloWorldWorkflow workflow = client.newWorkflowStub(HelloWorldWorkflow.class, options);
         String greeting = workflow.getGreeting("World");
